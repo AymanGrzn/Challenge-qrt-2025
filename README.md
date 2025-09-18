@@ -1,33 +1,31 @@
 # Leukemia-Survival-Prediction
-## Survival analysis of acute myeloid leukemia using machine learning and deep-learning-based time-to-event models
+## Survival analysis of acute myeloid leukemia using statistical and machine-learning-based time-to-event models
 
-This repository presents ongoing work conducted as part of the **QRT Challenge**. The objective is to compare classical and modern approaches to survival analysis applied to acute myeloid leukemia (AML). Several time-to-event survival prediction models are implemented, including Cox Proportional Hazards (CoxPH), Random Survival Forests (RSF), DeepSurv, and DeepHit. The project remains under development, and this repository does not represent its final version.
+This repository presents ongoing work for the **QRT Challenge**. The objective is to compare different survival analysis approaches applied to acute myeloid leukemia (AML). Implemented models include Cox Proportional Hazards (CoxPH) and Random Survival Forests (RSF). The project is still under development and does not represent its final version.
 
 ---
 
 ## Background
-Acute myeloid leukemia (AML) is an aggressive hematological malignancy characterized by the uncontrolled clonal proliferation of myeloid precursors. Accurate survival prediction for AML patients is essential to guide treatment decisions and improve clinical outcomes. Conventional statistical approaches such as Cox proportional hazards often fail to capture complex non-linear interactions between molecular and clinical features. This project investigates whether machine learning and deep-learning-based time-to-event models can provide more accurate and robust predictions of survival outcomes in AML.
+Acute myeloid leukemia (AML) is a severe hematological malignancy with highly variable patient outcomes. Accurate survival prediction is critical to guide treatment decisions and improve prognosis. Traditional approaches such as Cox proportional hazards provide a baseline reference but may not fully capture complex clinical and molecular factors. This project investigates whether modern machine-learning-based time-to-event methods can enhance survival prediction.
 
 ---
 
-## Materials and Methods
-The study relies on a retrospective cohort of patients diagnosed with AML between YYYY and YYYY. The dataset includes demographic variables such as age and sex, clinical variables including white blood cell count, blast percentage, and treatment types, as well as cytogenetic abnormalities and recurrent gene mutations such as FLT3, NPM1, and TP53. The outcome variables are overall survival time, measured in months, and the event indicator (death or censored).
-
-Feature importance was first assessed using a random forest approach. The models developed include Cox Proportional Hazards, Random Survival Forests, DeepSurv, and DeepHit. Model performance was evaluated using the concordance index (C-index) and the Integrated Brier Score (IBS). Kaplan–Meier survival curves were produced for clinically relevant subgroups defined by cytogenetic and molecular risk classifications.
+## Methods
+We used a retrospective AML cohort (YYYY–YYYY) including demographic, clinical, cytogenetic, and molecular data such as FLT3, NPM1, and TP53 mutations. The outcomes studied were overall survival time and event status. Feature selection was conducted with random forests. Models were evaluated using the concordance index (C-index) and Integrated Brier Score (IBS), and Kaplan–Meier curves were produced for different risk groups.
 
 ---
 
 ## Preliminary Results
-Random forest feature selection identified age, FLT3 mutation status, and cytogenetic risk group as the most influential predictors of survival. Early experiments suggest that DeepSurv and DeepHit achieve better predictive performance than CoxPH and RSF, with C-index values ranging between 0.76 and 0.78. Predicted survival outcomes were consistent with clinical expectations: patients with favorable cytogenetic profiles had the highest survival probabilities, while those with adverse-risk cytogenetics or TP53 mutations experienced the lowest. FLT3-ITD positive patients showed poor prognosis unless targeted therapies were administered. These findings remain preliminary and will be refined as the project progresses.
+Preliminary analyses identified age, FLT3 mutation status, and cytogenetic classification as the most influential predictors. Random Survival Forests slightly outperformed CoxPH in terms of predictive accuracy (C-index around 0.75). The models reproduced known clinical trends: favorable cytogenetics corresponded to the best survival outcomes, while adverse-risk cytogenetics and TP53 mutations were associated with the poorest. These results remain preliminary and will be refined in subsequent iterations.
 
 ---
 
-## Conclusion and Next Steps
-The first results indicate that deep-learning-based survival models, in particular DeepSurv and DeepHit, may provide an advantage over traditional methods in AML prognosis. The project is still ongoing and future steps will include further hyperparameter optimization, external validation using independent datasets, and the integration of treatment response prediction. This repository therefore reflects a work-in-progress version developed for the QRT Challenge.
+## Conclusion
+Classical statistical models and machine-learning survival methods show promising performance for AML prognosis. Further work will focus on hyperparameter optimization, external validation, and improved risk stratification. This repository reflects a **work in progress** for the QRT Challenge.
 
 ---
 
-## Installing Requirements
+## Installation
 
 ```bash
 pip install -r requirements.txt
